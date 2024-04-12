@@ -1,12 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Centro Educativo</title>
-    <script src="js/clases.js"></script>
-</head>
-<body>
-    
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" "text/css" href="css/styles.css"/>
+    <script src='js/clases.js'></script>
+    <title>Centro Educativo</title>
+    <script>
+      var its = new CentroEducativo('ITS Cipolletti');
+
+      function AltaEstudiante(){
+        let nombre = prompt('Ingrese el Nombre');
+        let apellido = prompt('Ingrese el Apellido');
+        let dni = prompt('Ingrese el DNI');
+        let estadoCivil = prompt('Ingrese el Estado Civil');
+        let cursoMatriculado = prompt('Ingrese el Curso Matricualdo');
+        let est = new Estudiante(nombre, apellido,dni,estadoCivil,cursoMatriculado);
+        its.altaEstudiante(est);
+        alert('Estudiante Ingresado.');
+      }
+      function BajaEstudiante(){
+        let dni = prompt('Ingrese el DNI');
+        its.bajaEstudiante(dni);
+        alert('Estudiante Eliminado.');
+      }
+
+      function ListarEstudiantes(){
+          document.getElementById("listado").value = "Estudiantes:\n"+its.listarEstudiantes('\n'); 
+      }
+      function AltaProfesor(){
+        let nombre = prompt('Ingrese el Nombre');
+        let apellido = prompt('Ingrese el Apellido');
+        let dni = prompt('Ingrese el DNI');
+        let estadoCivil = prompt('Ingrese el Estado Civil');
+        let anioIncorporacion = prompt('Ingrese el Curso Año Incorporacion');
+        let nroDespacho = prompt('Ingrese el Despacho');
+        let departamento = prompt('Ingrese el Departamento');
+        let prof = new Profesor(nombre, apellido,dni,estadoCivil,anioIncorporacion,nroDespacho,departamento);
+        its.altaProfesor(prof);
+        alert('Profesor Ingresado.');
+      }
+      function BajaProfesor(){
+        let dni = prompt('Ingrese el DNI');
+        its.bajaProfesor(dni);
+        alert('Profesor Eliminado.');
+      }
+
+      function ListarProfesores(){
+          document.getElementById("listado").value = "Profesores:\n"+its.listarProfesores('\n'); 
+      }     
+
+      function AltaPersonalServicio(){
+        let nombre = prompt('Ingrese el Nombre');
+        let apellido = prompt('Ingrese el Apellido');
+        let dni = prompt('Ingrese el DNI');
+        let estadoCivil = prompt('Ingrese el Estado Civil');
+        let anioIncorporacion = prompt('Ingrese el Curso Año Incorporacion');
+        let nroDespacho = prompt('Ingrese el Despacho');        
+        let seccionAsignada = prompt('Ingrese la Seccion Asignada');
+        let pers = new PersonalServicio(nombre, apellido,dni,estadoCivil,anioIncorporacion,nroDespacho,seccionAsignada);
+        its.altaPersonalServicio(pers);
+        alert('Personal de Servicio Ingresado.');
+      }
+      function BajaPersonalServicio(){
+        let dni = prompt('Ingrese el DNI');
+        its.bajaPersonalServicio(dni);
+        alert('Personal de Sevicio Eliminado.');
+      }
+
+      function ListarPersonalServicio(){
+          document.getElementById("listado").value = "Personal de Servicio:\n"+its.listarPersonalServicio('\n'); 
+      }   
+
+    </script>
+  </head>
+  <body>
+    <h1>Centro Educativo</h1>
+
+    <h2>Altas, Bajas y Listados</h2>
+
+    <h3>Estudiantes</h3>
+      <button onclick="AltaEstudiante();">Alta</button>
+      <button onclick="BajaEstudiante()">Baja</button>
+      <button onclick="ListarEstudiantes()">Listar</button>
+
+    <h3>Profesores</h3>
+      <button onclick="AltaProfesor();">Alta</button>
+      <button onclick="BajaProfesor();">Baja</button>
+      <button onclick="ListarProfesores();">Listar</button>
+
+    <h3>Personal de Servicio</h3>
+      <button onclick="AltaPersonalServicio();">Alta</button>
+      <button onclick="BajaPersonalServicio()">Baja</button>
+      <button onclick="ListarPersonalServicio()">Listar</button>
+    <h2>Listado</h2>
+    <textarea id="listado" width="1100px" heigth="1100px" readonly>
+
+    </textarea>
+  </body>
 </html>

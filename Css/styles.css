@@ -1,0 +1,69 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 30px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Estilos específicos para cada lista */
+#listado_estudiantes li {
+  border-left: 5px solid #007bff;
+}
+
+#listado_profesores li {
+  border-left: 5px solid #28a745;
+}
+
+#listado_personal li {
+  border-left: 5px solid #ffc107;
+}
+textarea {
+  width: 1250px;
+  height: 1000px; /* Ajusta esta altura según tus necesidades */
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
